@@ -67,7 +67,7 @@ namespace SCL
 
             // add the global options
             // these options are available to all commands and sub commands
-            // see AddBootstrapCommand for additional options on the commands
+            // see AddBootstrapCommand for additional options on specific commands
             root.AddGlobalOption(new Option<bool>(new string[] { "--dry-run", "-d" }, "Validates and displays configuration"));
             root.AddGlobalOption(new Option<bool>(new string[] { "--verbose", "-v" }, "Show verbose output"));
 

@@ -11,14 +11,14 @@ namespace SCL.CommandLine.Extensions
 {
     /// <summary>
     /// Extension methods to add commands to system.commandline.command
-    /// Called from BuildRootCommand
-    /// AddBootstrapCommand is the most complex
+    ///   Called from BuildRootCommand
+    ///   AddBootstrapCommand is the most complex
     /// </summary>
     public static class CommandAdders
     {
         /// <summary>
         /// Extension method to add the add command
-        /// We use this as an example of the EnvVarOptions extension which reads options from env vars as well as command line
+        ///   We use this as an example of the EnvVarOptions extension which reads options from env vars as well as command line
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddAddCommand(this Command parent)
@@ -42,6 +42,7 @@ namespace SCL.CommandLine.Extensions
 
         /// <summary>
         /// Extension method to add the bootstrap command
+        ///   This is an example of command specific options and validation
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddBootstrapCommand(this Command parent)
@@ -82,7 +83,7 @@ namespace SCL.CommandLine.Extensions
 
         /// <summary>
         /// Extension method to add the build command
-        /// Example using an enum and default value as an option
+        ///   Example using an enum and default value as an option
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddBuildCommand(this Command parent)
@@ -171,7 +172,7 @@ namespace SCL.CommandLine.Extensions
             parent.AddCommand(c);
         }
 
-        // validate the parameters
+        // validate the bootstrap command parameters
         private static string ValidateBootstrapCommand(CommandResult result)
         {
             string msg = string.Empty;

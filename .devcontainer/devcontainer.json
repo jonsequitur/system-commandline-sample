@@ -1,5 +1,5 @@
 {
-	"name": "KubeApps",
+	"name": "system-commandline-sample-app",
 	"dockerFile": "Dockerfile",
 
 	// do not change these if you want Docker in Docker support
@@ -20,24 +20,15 @@
 	},
 	
 	// forward ports for the app
-	"forwardPorts": [
-		3000,
-		30000,
-		32000
-	],
+	"forwardPorts": [],
 
 	// add labels
-	"portsAttributes": {
-		"3000": { "label": "Gogs" },
-		"30000": { "label": "Prometheus" },
-		"32000": { "label": "Grafana" }
-	},
+	"portsAttributes": {},
 
 	// Install extensions
 	"extensions": [
 		"ms-dotnettools.csharp",
 		"ms-azuretools.vscode-docker",
-		"ms-kubernetes-tools.vscode-kubernetes-tools",
 		"davidanson.vscode-markdownlint",
 		"gruntfuggly.todo-tree",
 		"mutantdino.resourcemonitor",

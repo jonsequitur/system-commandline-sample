@@ -10,7 +10,9 @@ using System.Linq;
 namespace SCL.CommandLine.Extensions
 {
     /// <summary>
-    /// Adds commands to system.commandline.command
+    /// Extension methods to add commands to system.commandline.command
+    /// Called from BuildRootCommand
+    /// AddBootstrapCommand is the most complex
     /// </summary>
     public static class CommandAdders
     {
@@ -32,19 +34,28 @@ namespace SCL.CommandLine.Extensions
         public static void AddBootstrapCommand(this Command parent)
         {
             Command bs = new ("bootstrap", "Manage bootstrap services");
+
+            // alias because it's easier to type
             bs.AddAlias("bs");
 
             Command add = new ("add", "Add bootstrap service");
+            add.Handler = CommandHandler.Create<BootstrapConfig>(CommandHandlers.DoBootstrapAddCommand);
+
+            // these options will only be available to this command
+            // we could add as global options to the parent command
+            // I chose to do it this way to get the custom description
+            // Note that our handler uses a different model for the command
             add.AddOption(new Option<List<string>>(new string[] { "--services", "-s" }, "bootstrap service(s) to add"));
             add.AddOption(new Option<bool>(new string[] { "--all", "-a" }, "Add all bootstrap services"));
-            add.Handler = CommandHandler.Create<BootstrapConfig>(CommandHandlers.DoBootstrapAddCommand);
+
+            // command validator to make sure -s or -a (but not both) are provided
             add.AddValidator(ValidateBootstrapCommand);
 
             Command rm = new ("remove", "Remove bootstrap service");
             rm.AddAlias("rm");
+            rm.Handler = CommandHandler.Create<BootstrapConfig>(CommandHandlers.DoBootstrapRemoveCommand);
             rm.AddOption(new Option<List<string>>(new string[] { "--services", "-s" }, "bootstrap service(s) to remove"));
             rm.AddOption(new Option<bool>(new string[] { "--all", "-a" }, "Remove all bootstrap services"));
-            rm.Handler = CommandHandler.Create<BootstrapConfig>(CommandHandlers.DoBootstrapRemoveCommand);
             rm.AddValidator(ValidateBootstrapCommand);
 
             // add the commands to the tree

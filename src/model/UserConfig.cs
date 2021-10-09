@@ -11,6 +11,9 @@ namespace SCL
     /// </summary>
     public sealed class UserConfig : AppConfig
     {
+        /// <summary>
+        /// Gets or sets the User
+        /// </summary>
         public string User { get; set; }
     }
 }

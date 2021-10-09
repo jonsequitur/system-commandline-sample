@@ -16,7 +16,14 @@ namespace SCL.CommandLine.Extensions
         // capture parse errors from env vars
         private static readonly List<string> EnvVarErrors = new ();
 
-        // insert env vars as default
+        /// <summary>
+        /// Add an option that uses env var for default value
+        /// </summary>
+        /// <typeparam name="T">type of option</typeparam>
+        /// <param name="names">list of option names / aliases</param>
+        /// <param name="description">option description</param>
+        /// <param name="defaultValue">option default value</param>
+        /// <returns>Option</returns>
         public static Option AddOption<T>(string[] names, string description, T defaultValue)
         {
             if (string.IsNullOrWhiteSpace(description))
@@ -59,7 +66,18 @@ namespace SCL.CommandLine.Extensions
             return new Option<T>(names, () => value, description);
         }
 
-        // insert env vars as default with min val for ints
+        /// <summary>
+        /// Add an option that uses env var for default value
+        /// Must be a numeric value type
+        /// Optional min and max value validation
+        /// </summary>
+        /// <typeparam name="T">type of option</typeparam>
+        /// <param name="names">list of option names / aliases</param>
+        /// <param name="description">option description</param>
+        /// <param name="defaultValue">option default value</param>
+        /// <param name="minValue">min value</param>
+        /// <param name="maxValue">max value</param>
+        /// <returns>Option</returns>
         public static Option<int> AddOption(string[] names, string description, int defaultValue, int minValue, int? maxValue = null)
         {
             if (string.IsNullOrWhiteSpace(description))

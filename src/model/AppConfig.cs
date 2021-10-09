@@ -3,6 +3,9 @@
 
 namespace SCL
 {
+    /// <summary>
+    /// BuildType enum used in build command
+    /// </summary>
     public enum BuildType
     {
         Debug,
@@ -15,7 +18,14 @@ namespace SCL
     /// </summary>
     public class AppConfig
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether this is a dry run
+        /// </summary>
         public bool DryRun { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to provide verbose logging
+        /// </summary>
         public bool Verbose { get; set; }
     }
 }

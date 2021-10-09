@@ -11,6 +11,9 @@ namespace SCL
     /// </summary>
     public sealed class BuildConfig : AppConfig
     {
+        /// <summary>
+        /// Gets or sets the BuildType enum
+        /// </summary>
         public BuildType BuildType { get; set; }
     }
 }

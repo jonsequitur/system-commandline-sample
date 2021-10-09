@@ -12,7 +12,14 @@ namespace SCL
     /// </summary>
     public sealed class BootstrapConfig : AppConfig
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether to apply to all services
+        /// </summary>
         public bool All { get; set; }
+
+        /// <summary>
+        /// Gets or sets a list of services to apply to
+        /// </summary>
         public List<string> Services { get; set; }
     }
 }

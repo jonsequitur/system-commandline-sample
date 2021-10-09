@@ -12,7 +12,7 @@
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <LangVersion>Latest</LangVersion>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <RepositoryUrl>https://github.com/bartr/kubeapps/</RepositoryUrl> 
+    <RepositoryUrl>https://github.com/bartr/system-commandline-sample/</RepositoryUrl> 
     <Description>Sample dotnet app that uses System.CommandLine</Description>
     <Title>SCL</Title>
   </PropertyGroup>
@@ -32,12 +32,6 @@
   <ItemGroup>
     <AdditionalFiles Include="files\stylecop.json" />
     <AdditionalFiles Include=".editorconfig" />
-    <Content Include="files\*.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\content\**">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>

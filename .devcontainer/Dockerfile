@@ -4,7 +4,6 @@ FROM ghcr.io/cse-labs/dind:latest
 
 # some images require specific values
 ARG USERNAME=vscode
-ENV PATH $PATH:/usr/local/go/bin
 
 RUN apt-get update && \
     apt-get upgrade -y && \

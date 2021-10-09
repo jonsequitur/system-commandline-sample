@@ -9,10 +9,13 @@ using System.Linq;
 
 namespace SCL.CommandLine.Extensions
 {
-    public static class AddCommands
+    /// <summary>
+    /// Adds commands to system.commandline.command
+    /// </summary>
+    public static class CommandAdders
     {
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the add command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddAddCommand(this Command parent)
@@ -23,7 +26,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the BootstrapCommand
+        /// Extension method to add the bootstrap command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddBootstrapCommand(this Command parent)
@@ -51,7 +54,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the build command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddBuildCommand(this Command parent)
@@ -62,7 +65,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the check command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddCheckCommand(this Command parent)
@@ -73,7 +76,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the config command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddConfigCommand(this Command parent)
@@ -92,7 +95,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the init command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddInitCommand(this Command parent)
@@ -103,7 +106,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the list command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddListCommand(this Command parent)
@@ -115,7 +118,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the logs command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddLogsCommand(this Command parent)
@@ -126,7 +129,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the new command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddNewCommand(this Command parent)
@@ -141,7 +144,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the remove command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddRemoveCommand(this Command parent)
@@ -153,7 +156,7 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// Extension method to add the command
+        /// Extension method to add the sync command
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddSyncCommand(this Command parent)

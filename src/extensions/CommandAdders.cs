@@ -23,8 +23,19 @@ namespace SCL.CommandLine.Extensions
         public static void AddAddCommand(this Command parent)
         {
             Command c = new ("add", "Add the app to GitOps");
-            c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoAddCommand);
             parent.AddCommand(c);
+
+            // note we are using UserConfig so we can pick up the option we add below
+            c.Handler = CommandHandler.Create<UserConfig>(CommandHandlers.DoAddCommand);
+
+            // sample demonstrating loading from env var using the EnvVarOptions extension
+            // this will pickup the user from the env vars
+            // you can override by specifying on the command line
+            // --user works for Linux / Mac
+            // --username works for Windows
+            // by using aliases, we can support all 3 options
+            // imagine the code you didn't have to write ...
+            c.AddOption(EnvVarOptions.AddOption(new string[] { "--user", "--username", "-u" }, "User name", string.Empty));
         }
 
         /// <summary>

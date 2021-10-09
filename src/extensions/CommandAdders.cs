@@ -18,6 +18,7 @@ namespace SCL.CommandLine.Extensions
     {
         /// <summary>
         /// Extension method to add the add command
+        /// We use this as an example of the EnvVarOptions extension which reads options from env vars as well as command line
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddAddCommand(this Command parent)
@@ -28,12 +29,13 @@ namespace SCL.CommandLine.Extensions
             // note we are using UserConfig so we can pick up the option we add below
             c.Handler = CommandHandler.Create<UserConfig>(CommandHandlers.DoAddCommand);
 
-            // sample demonstrating loading from env var using the EnvVarOptions extension
-            // this will pickup the user from the env vars
-            // you can override by specifying on the command line
-            // --user works for Linux / Mac
-            // --username works for Windows
-            // by using aliases, we can support all 3 options
+            // loading from env var using the EnvVarOptions extension
+            //   this will pickup the user from the env vars
+            //     you can override by specifying on the command line
+            //   by using aliases, we can support all 3 options
+            //     --user works for Linux / Mac env var
+            //     --username works for Windows env var
+            //     -u is the short option for convenience
             // imagine the code you didn't have to write ...
             c.AddOption(EnvVarOptions.AddOption(new string[] { "--user", "--username", "-u" }, "User name", string.Empty));
         }

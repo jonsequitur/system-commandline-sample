@@ -32,6 +32,9 @@
   <ItemGroup>
     <AdditionalFiles Include="files\stylecop.json" />
     <AdditionalFiles Include=".editorconfig" />
+    <Content Include="files\*.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

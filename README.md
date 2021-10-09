@@ -4,7 +4,13 @@
 
 ## Overview
 
-This is a C# sample of using `System.CommandLine` to build a CLI application
+This is a C# sample of using `System.CommandLine` to build a CLI application with commands and sub-commands
+
+We use `extensions` to build and add the commands to the `RootCommand` then System.CommandLine handles everything for us
+
+System.CommandLine supports type ahead which we plan to enable in the future (we love PRs!)
+
+Start exploring in `Program.cs` - we added explanations in the code comments
 
 ### Engineering Docs
 

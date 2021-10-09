@@ -234,10 +234,13 @@ dotnet_diagnostic.SA1512.severity = none
 dotnet_diagnostic.SA1516.severity = none
 
 # SA1600: Elements should be documented
-dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1600.severity = suggestion
 
 # SA1601: Partial elements should be documented
 dotnet_diagnostic.SA1601.severity = suggestion
+
+# SA1602: Enumeration items should be documented
+dotnet_diagnostic.SA1602.severity = none
 
 # SA1629: Documentation text should end with a period
 dotnet_diagnostic.SA1629.severity = none

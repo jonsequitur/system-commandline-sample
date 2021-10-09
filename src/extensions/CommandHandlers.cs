@@ -5,6 +5,16 @@ using System;
 
 namespace SCL.CommandLine.Extensions
 {
+    /// <summary>
+    /// Command handlers for each leaf command
+    /// These are very simple examples
+    /// The way System.CommandLine handles calling the right handler is simple and elegant
+    ///   which allows you to write very clean code and avoid parsing
+    /// Another structure option is to include the Add extension and the handler in a "command class"
+    ///   that is how we initially implemented it and we decided we liked the "grouping" better
+    ///   depending on how complex your handlers are, you may want to use a different approach
+    /// Grouping the Add extension, [validation] and handler in a command class also provides some interesting reuse capabilities
+    /// </summary>
     public static class CommandHandlers
     {
         /// <summary>
@@ -14,7 +24,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoAddCommand(AppConfig appConfig)
         {
-            return PrintConfig("Add Command", appConfig); 
+            return PrintConfig("Add Command", appConfig);
         }
 
         /// <summary>
@@ -34,7 +44,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoBootstrapRemoveCommand(BootstrapConfig bootstrapConfig)
         {
-            return PrintBootstrapConfig ("Remove Command", bootstrapConfig);
+            return PrintBootstrapConfig("Remove Command", bootstrapConfig);
         }
 
         /// <summary>
@@ -44,7 +54,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoBuildCommand(AppConfig appConfig)
         {
-            return PrintConfig("Build Command", appConfig); 
+            return PrintConfig("Build Command", appConfig);
         }
 
         /// <summary>
@@ -54,7 +64,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoCheckCommand(AppConfig appConfig)
         {
-            return PrintConfig("Check Command", appConfig); 
+            return PrintConfig("Check Command", appConfig);
         }
 
         /// <summary>
@@ -74,7 +84,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoConfigUpdate(AppConfig appConfig)
         {
-            return PrintConfig("Config Update", appConfig); 
+            return PrintConfig("Config Update", appConfig);
         }
 
         /// <summary>
@@ -84,7 +94,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoInitCommand(AppConfig appConfig)
         {
-            return PrintConfig("Init Command", appConfig); 
+            return PrintConfig("Init Command", appConfig);
         }
 
         /// <summary>
@@ -104,7 +114,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoLogsCommand(AppConfig appConfig)
         {
-            return PrintConfig("Logs Command", appConfig); 
+            return PrintConfig("Logs Command", appConfig);
         }
 
         /// <summary>
@@ -114,7 +124,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoNewDotnetCommand(AppConfig appConfig)
         {
-            return PrintConfig("New Dotnet Command", appConfig); 
+            return PrintConfig("New Dotnet Command", appConfig);
         }
 
         /// <summary>

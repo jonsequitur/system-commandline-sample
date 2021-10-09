@@ -23,7 +23,7 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddAddCommand(this Command parent)
         {
-            Command c = new ("add", "Add the app to GitOps");
+            Command c = new ("add", "Add the user to GitOps");
             parent.AddCommand(c);
 
             // note we are using UserConfig so we can pick up the option we add below
@@ -46,11 +46,13 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddBootstrapCommand(this Command parent)
         {
+            // no handler because it's not a "leaf" command
             Command bs = new ("bootstrap", "Manage bootstrap services");
 
             // alias because it's easier to type
             bs.AddAlias("bs");
 
+            // this is a leaf command
             Command add = new ("add", "Add bootstrap service");
             add.Handler = CommandHandler.Create<BootstrapConfig>(CommandHandlers.DoBootstrapAddCommand);
 
@@ -64,6 +66,7 @@ namespace SCL.CommandLine.Extensions
             // command validator to make sure -s or -a (but not both) are provided
             add.AddValidator(ValidateBootstrapCommand);
 
+            // same as add
             Command rm = new ("remove", "Remove bootstrap service");
             rm.AddAlias("rm");
             rm.Handler = CommandHandler.Create<BootstrapConfig>(CommandHandlers.DoBootstrapRemoveCommand);
@@ -79,13 +82,18 @@ namespace SCL.CommandLine.Extensions
 
         /// <summary>
         /// Extension method to add the build command
+        /// Example using an enum and default value as an option
         /// </summary>
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddBuildCommand(this Command parent)
         {
             Command c = new ("build", "Build the app");
-            c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoBuildCommand);
+            c.Handler = CommandHandler.Create<BuildConfig>(CommandHandlers.DoBuildCommand);
             parent.AddCommand(c);
+
+            // add an option for the BuildType enumeration
+            // BuildType.Debug is the default
+            c.AddOption(new Option<BuildType>(new string[] { "--build-type", "-b" }, () => BuildType.Debug, "Build type"));
         }
 
         /// <summary>

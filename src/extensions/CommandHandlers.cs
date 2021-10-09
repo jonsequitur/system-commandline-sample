@@ -59,11 +59,15 @@ namespace SCL.CommandLine.Extensions
         /// <summary>
         /// build Command Handler
         /// </summary>
-        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <param name="config">parsed command line in AppConfig</param>
         /// <returns>0 on success</returns>
-        public static int DoBuildCommand(AppConfig appConfig)
+        public static int DoBuildCommand(BuildConfig config)
         {
-            return PrintConfig("Build Command", appConfig);
+            PrintConfig("Build Command", config);
+
+            Console.WriteLine($"    User      {config.BuildType}");
+
+            return 0;
         }
 
         /// <summary>

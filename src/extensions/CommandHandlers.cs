@@ -9,122 +9,99 @@ namespace SCL.CommandLine.Extensions
 {
     public static class CommandHandlers
     {
-        // command handler
+        // add command handler
         public static int DoAddCommand(AppConfig appConfig)
         {
-            PrintConfig("Add Command", appConfig);
-
-            return 0;
+            return PrintConfig("Add Command", appConfig); 
         }
 
         // bootstrap-add handler
         public static int DoBootstrapAddCommand(BootstrapConfig bootstrapConfig)
         {
-            PrintBootstrapConfig("Add Command", bootstrapConfig);
-
-            return 0;
+            return PrintBootstrapConfig("Add Command", bootstrapConfig);
         }
 
         // bootstrap-remove handler
         public static int DoBootstrapRemoveCommand(BootstrapConfig bootstrapConfig)
         {
-            PrintBootstrapConfig("Remove Command", bootstrapConfig);
-
-            return 0;
+            return PrintBootstrapConfig ("Remove Command", bootstrapConfig);
         }
 
-        // command handler
+        // build command handler
         public static int DoBuildCommand(AppConfig appConfig)
         {
-            PrintConfig("Build Command", appConfig);
-
-            return 0;
+            return PrintConfig("Build Command", appConfig); 
         }
 
-        // command handler
+        // check command handler
         public static int DoCheckCommand(AppConfig appConfig)
         {
-            PrintConfig("Check Command", appConfig);
-
-            return 0;
+            return PrintConfig("Check Command", appConfig); 
         }
 
-        // command handler
-        public static int DoConfigUpdate(AppConfig appConfig)
-        {
-            PrintConfig("Config Update", appConfig);
-
-            return 0;
-        }
-
-        // command handler
+        // config-reset command handler
         public static int DoConfigReset(AppConfig appConfig)
         {
-            PrintConfig("Config Reset", appConfig);
-
-            return 0;
+            return PrintConfig("Config Reset", appConfig);
         }
 
-        // command handler
+        // config-update command handler
+        public static int DoConfigUpdate(AppConfig appConfig)
+        {
+            return PrintConfig("Config Update", appConfig); 
+        }
+
+        // init command handler
         public static int DoInitCommand(AppConfig appConfig)
         {
-            PrintConfig("Init Command", appConfig);
-
-            return 0;
+            return PrintConfig("Init Command", appConfig); 
         }
 
-        // command handler
+        // list command handler
         public static int DoListCommand(AppConfig appConfig)
         {
-            PrintConfig("List Command", appConfig);
-
-            return 0;
+            return PrintConfig("List Command", appConfig);
         }
 
-        // command handler
+        // logs command handler
         public static int DoLogsCommand(AppConfig appConfig)
         {
-            PrintConfig("Logs Command", appConfig);
-
-            return 0;
+            return PrintConfig("Logs Command", appConfig); 
         }
 
-        // command handler
+        // new-dotnet command handler
         public static int DoNewDotnetCommand(AppConfig appConfig)
         {
-            PrintConfig("New Dotnet Command", appConfig);
-
-            return 0;
+            return PrintConfig("New Dotnet Command", appConfig); 
         }
 
-        // command handler
+        // remove command handler
         public static int DoRemoveCommand(AppConfig appConfig)
         {
-            PrintConfig("Remove Command", appConfig);
-
-            return 0;
+            return PrintConfig("Remove Command", appConfig);
         }
 
-        // command handler
+        // sync command handler
         public static int DoSyncCommand(AppConfig appConfig)
         {
-            PrintConfig("Sync Command", appConfig);
-
-            return 0;
+            return PrintConfig("Sync Command", appConfig);
         }
 
         // for debugging
-        private static void PrintConfig(string method, AppConfig config)
+        private static int PrintConfig(string method, AppConfig config)
         {
             Console.WriteLine(method);
             Console.WriteLine($"    DryRun    {config.DryRun}");
             Console.WriteLine($"    Verbose   {config.Verbose}");
+
+            return 0;
         }
 
         // for debugging
-        private static void PrintBootstrapConfig(string method, BootstrapConfig config)
+        private static int PrintBootstrapConfig(string method, BootstrapConfig config)
         {
-            Console.WriteLine(method);
+            PrintConfig(method, config);
+
             if (config.Services != null && config.Services.Count > 0)
             {
                 Console.WriteLine($"    Services  {string.Join(' ', config.Services)}");
@@ -135,8 +112,8 @@ namespace SCL.CommandLine.Extensions
             }
 
             Console.WriteLine($"    All       {config.All}");
-            Console.WriteLine($"    DryRun    {config.DryRun}");
-            Console.WriteLine($"    Verbose   {config.Verbose}");
+
+            return 0;
         }
     }
 }

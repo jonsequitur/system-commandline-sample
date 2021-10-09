@@ -20,11 +20,20 @@ namespace SCL.CommandLine.Extensions
         /// <summary>
         /// add Command Handler
         /// </summary>
-        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <param name="config">parsed command line in UserConfig</param>
         /// <returns>0 on success</returns>
-        public static int DoAddCommand(AppConfig appConfig)
+        public static int DoAddCommand(UserConfig config)
         {
-            return PrintConfig("Add Command", appConfig);
+            // note we use UserConfig instead of AppConfig
+            // we added the --user --username -u option in the Add extension
+            // this will pickup the user from the env vars
+            // you can override by specifying on the command line
+            // --user works for Linux / Mac
+            // --username works for Windows
+            // by using aliases, we can support all 3 options
+            PrintConfig("Add Command", config);
+            Console.WriteLine($"    User      {config.User}");
+            return 0;
         }
 
         /// <summary>

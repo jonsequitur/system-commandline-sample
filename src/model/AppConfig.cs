@@ -3,6 +3,10 @@
 
 namespace SCL
 {
+    /// <summary>
+    /// Model for global command line options
+    /// System.CommandLine will parse and pass to the handler
+    /// </summary>
     public class AppConfig
     {
         public bool DryRun { get; set; }

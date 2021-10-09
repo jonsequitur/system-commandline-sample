@@ -5,6 +5,11 @@ using System.Collections.Generic;
 
 namespace SCL
 {
+    /// <summary>
+    /// Model for bootstrap commands
+    /// System.CommandLine will parse and pass to the handler
+    /// Repeat this pattern for custom command options
+    /// </summary>
     public sealed class BootstrapConfig : AppConfig
     {
         public bool All { get; set; }

@@ -19,6 +19,7 @@ namespace SCL.CommandLine.Extensions
     {
         /// <summary>
         /// add Command Handler
+        ///   this uses the UserConfig which supports the --user option
         /// </summary>
         /// <param name="config">parsed command line in UserConfig</param>
         /// <returns>0 on success</returns>
@@ -38,28 +39,29 @@ namespace SCL.CommandLine.Extensions
 
         /// <summary>
         /// bootstrap-add Command Handler
+        ///   this uses the BootstrapConfig which requires --all or --services
         /// </summary>
         /// <param name="bootstrapConfig">parsed command line in BootstrapConfig</param>
         /// <returns>0 on success</returns>
         public static int DoBootstrapAddCommand(BootstrapConfig bootstrapConfig)
         {
-            // this uses the BootstrapConfig which requires --all or --services
             return PrintBootstrapConfig("Add Command", bootstrapConfig);
         }
 
         /// <summary>
         /// bootstrap-remove Command Handler
+        ///   this uses the BootstrapConfig which requires --all or --services
         /// </summary>
         /// <param name="bootstrapConfig">parsed command line in BootstrapConfig</param>
         /// <returns>0 on success</returns>
         public static int DoBootstrapRemoveCommand(BootstrapConfig bootstrapConfig)
         {
-            // this uses the BootstrapConfig which requires --all or --services
             return PrintBootstrapConfig("Remove Command", bootstrapConfig);
         }
 
         /// <summary>
         /// build Command Handler
+        ///   this uses BuildConfig to support the BuildType enum
         /// </summary>
         /// <param name="config">parsed command line in AppConfig</param>
         /// <returns>0 on success</returns>
@@ -113,16 +115,6 @@ namespace SCL.CommandLine.Extensions
         }
 
         /// <summary>
-        /// list Command Handler
-        /// </summary>
-        /// <param name="appConfig">parsed command line in AppConfig</param>
-        /// <returns>0 on success</returns>
-        public static int DoListCommand(AppConfig appConfig)
-        {
-            return PrintConfig("List Command", appConfig);
-        }
-
-        /// <summary>
         /// logs Command Handler
         /// </summary>
         /// <param name="appConfig">parsed command line in AppConfig</param>
@@ -130,16 +122,6 @@ namespace SCL.CommandLine.Extensions
         public static int DoLogsCommand(AppConfig appConfig)
         {
             return PrintConfig("Logs Command", appConfig);
-        }
-
-        /// <summary>
-        /// new-dotnet Command Handler
-        /// </summary>
-        /// <param name="appConfig">parsed command line in AppConfig</param>
-        /// <returns>0 on success</returns>
-        public static int DoNewDotnetCommand(AppConfig appConfig)
-        {
-            return PrintConfig("New Dotnet Command", appConfig);
         }
 
         /// <summary>

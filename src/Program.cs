@@ -67,9 +67,7 @@ namespace SCL
             root.AddCheckCommand();
             root.AddConfigCommand();
             root.AddInitCommand();
-            root.AddListCommand();
             root.AddLogsCommand();
-            root.AddNewCommand();
             root.AddRemoveCommand();
             root.AddSyncCommand();
 

@@ -23,7 +23,7 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddAddCommand(this Command parent)
         {
-            Command c = new ("add", "Add the user to GitOps");
+            Command c = new ("add", "Add the user");
             parent.AddCommand(c);
 
             // note we are using UserConfig so we can pick up the option we add below
@@ -102,7 +102,7 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddCheckCommand(this Command parent)
         {
-            Command c = new ("check", "Check the app endpoint (if configured)");
+            Command c = new ("check", "Check the app endpoint");
             c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoCheckCommand);
             parent.AddCommand(c);
         }
@@ -113,7 +113,7 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddConfigCommand(this Command parent)
         {
-            Command cfg = new ("config", "Manage KubeApps configuration");
+            Command cfg = new ("config", "Manage configuration");
 
             Command c = new ("reset", "Reset config files to default");
             c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoConfigReset);
@@ -132,20 +132,8 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddInitCommand(this Command parent)
         {
-            Command c = new ("init", "Initialize KubeApps");
+            Command c = new ("init", "Initialize the app");
             c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoInitCommand);
-            parent.AddCommand(c);
-        }
-
-        /// <summary>
-        /// Extension method to add the list command
-        /// </summary>
-        /// <param name="parent">System.CommandLine.Command</param>
-        public static void AddListCommand(this Command parent)
-        {
-            Command c = new ("list", "List the apps running in Kubernetes");
-            c.AddAlias("ls");
-            c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoListCommand);
             parent.AddCommand(c);
         }
 
@@ -155,24 +143,9 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddLogsCommand(this Command parent)
         {
-            Command c = new ("logs", "Get the Kubernetes app logs");
+            Command c = new ("logs", "Get the app logs");
             c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoLogsCommand);
             parent.AddCommand(c);
-        }
-
-        /// <summary>
-        /// Extension method to add the new command
-        /// </summary>
-        /// <param name="parent">System.CommandLine.Command</param>
-        public static void AddNewCommand(this Command parent)
-        {
-            Command dotnet = new ("dotnet", "Create a new Dotnet WebAPI app");
-            dotnet.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoNewDotnetCommand);
-
-            Command appNew = new ("new", "Create a new app");
-
-            appNew.AddCommand(dotnet);
-            parent.AddCommand(appNew);
         }
 
         /// <summary>
@@ -181,7 +154,7 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddRemoveCommand(this Command parent)
         {
-            Command c = new ("remove", "Remove app from GitOps");
+            Command c = new ("remove", "Remove the app");
             c.AddAlias("rm");
             c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoRemoveCommand);
             parent.AddCommand(c);
@@ -193,7 +166,7 @@ namespace SCL.CommandLine.Extensions
         /// <param name="parent">System.CommandLine.Command</param>
         public static void AddSyncCommand(this Command parent)
         {
-            Command c = new ("sync", "Sync any GitOps changes");
+            Command c = new ("sync", "Sync changes");
             c.Handler = CommandHandler.Create<AppConfig>(CommandHandlers.DoSyncCommand);
             parent.AddCommand(c);
         }

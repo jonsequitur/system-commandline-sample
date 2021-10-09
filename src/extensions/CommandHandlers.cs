@@ -9,79 +9,131 @@ namespace SCL.CommandLine.Extensions
 {
     public static class CommandHandlers
     {
-        // add command handler
+        /// <summary>
+        /// add Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoAddCommand(AppConfig appConfig)
         {
             return PrintConfig("Add Command", appConfig); 
         }
 
-        // bootstrap-add handler
+        /// <summary>
+        /// bootstrap-add Command Handler
+        /// </summary>
+        /// <param name="bootstrapConfig">parsed command line in BootstrapConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoBootstrapAddCommand(BootstrapConfig bootstrapConfig)
         {
             return PrintBootstrapConfig("Add Command", bootstrapConfig);
         }
 
-        // bootstrap-remove handler
+        /// <summary>
+        /// bootstrap-remove Command Handler
+        /// </summary>
+        /// <param name="bootstrapConfig">parsed command line in BootstrapConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoBootstrapRemoveCommand(BootstrapConfig bootstrapConfig)
         {
             return PrintBootstrapConfig ("Remove Command", bootstrapConfig);
         }
 
-        // build command handler
+        /// <summary>
+        /// build Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoBuildCommand(AppConfig appConfig)
         {
             return PrintConfig("Build Command", appConfig); 
         }
 
-        // check command handler
+        /// <summary>
+        /// check Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoCheckCommand(AppConfig appConfig)
         {
             return PrintConfig("Check Command", appConfig); 
         }
 
-        // config-reset command handler
+        /// <summary>
+        /// config-reset Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoConfigReset(AppConfig appConfig)
         {
             return PrintConfig("Config Reset", appConfig);
         }
 
-        // config-update command handler
+        /// <summary>
+        /// config-update Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoConfigUpdate(AppConfig appConfig)
         {
             return PrintConfig("Config Update", appConfig); 
         }
 
-        // init command handler
+        /// <summary>
+        /// init Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoInitCommand(AppConfig appConfig)
         {
             return PrintConfig("Init Command", appConfig); 
         }
 
-        // list command handler
+        /// <summary>
+        /// list Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoListCommand(AppConfig appConfig)
         {
             return PrintConfig("List Command", appConfig);
         }
 
-        // logs command handler
+        /// <summary>
+        /// logs Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoLogsCommand(AppConfig appConfig)
         {
             return PrintConfig("Logs Command", appConfig); 
         }
 
-        // new-dotnet command handler
+        /// <summary>
+        /// new-dotnet Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoNewDotnetCommand(AppConfig appConfig)
         {
             return PrintConfig("New Dotnet Command", appConfig); 
         }
 
-        // remove command handler
+        /// <summary>
+        /// remove Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoRemoveCommand(AppConfig appConfig)
         {
             return PrintConfig("Remove Command", appConfig);
         }
 
-        // sync command handler
+        /// <summary>
+        /// sync Command Handler
+        /// </summary>
+        /// <param name="appConfig">parsed command line in AppConfig</param>
+        /// <returns>0 on success</returns>
         public static int DoSyncCommand(AppConfig appConfig)
         {
             return PrintConfig("Sync Command", appConfig);

@@ -75,6 +75,7 @@ namespace SCL
             {
                 if (!args.Contains("--version") &&
                     (args.Contains("-h") ||
+                    args.Contains("-?") ||
                     args.Contains("--help") ||
                     args.Contains("--dry-run")))
                 {

@@ -46,9 +46,9 @@ namespace SCL.CommandLine.Extensions
         }
 
         // bootstrap-remove handler
-        public static int DoRemoveCommand(BootstrapConfig config)
+        public static int DoRemoveCommand(BootstrapConfig bootstrapConfig)
         {
-            BootstrapCommand.config = config;
+            config = bootstrapConfig;
 
             PrintConfig("Remove Command");
 
@@ -56,9 +56,9 @@ namespace SCL.CommandLine.Extensions
         }
 
         // bootstrap-add handler
-        public static int DoAddCommand(BootstrapConfig config)
+        public static int DoAddCommand(BootstrapConfig bootstrapConfig)
         {
-            BootstrapCommand.config = config;
+            config = bootstrapConfig;
 
             PrintConfig("Add Command");
 

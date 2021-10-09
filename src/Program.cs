@@ -23,12 +23,6 @@ namespace SCL
         /// <returns>0 on success</returns>
         public static int Main(string[] args)
         {
-            // run help if no params passed - this prevents an error message
-            if (args == null || args.Length == 0)
-            {
-                args = new string[] { "--help" };
-            }
-
             // we all need ascii art :)
             DisplayAsciiArt(args);
 

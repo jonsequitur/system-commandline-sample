@@ -43,6 +43,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoBootstrapAddCommand(BootstrapConfig bootstrapConfig)
         {
+            // this uses the BootstrapConfig which requires --all or --services
             return PrintBootstrapConfig("Add Command", bootstrapConfig);
         }
 
@@ -53,6 +54,7 @@ namespace SCL.CommandLine.Extensions
         /// <returns>0 on success</returns>
         public static int DoBootstrapRemoveCommand(BootstrapConfig bootstrapConfig)
         {
+            // this uses the BootstrapConfig which requires --all or --services
             return PrintBootstrapConfig("Remove Command", bootstrapConfig);
         }
 

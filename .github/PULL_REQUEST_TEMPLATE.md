@@ -6,6 +6,3 @@
 
 - [ ] Documentation changes
 - [ ] Code changes
-- [ ] Test changes
-- [ ] CI-CD changes
-- [ ] GitHub Template changes

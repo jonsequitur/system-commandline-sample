@@ -20,9 +20,9 @@ Start exploring in `Program.cs` - we added explanations in the code comments
 
 ## How to file issues and get help  
 
-This project uses GitHub Issues to track bugs and feature requests. Please search the existing issues before filing new issues to avoid duplicates. For new issues, file your bug or feature request as a new issue.
+This project uses GitHub Discussions to track bugs and feature requests. Please search the existing discussion before filing new issues to avoid duplicates. For new issues, file your bug or feature request as a thread.
 
-For help and questions about using this project, please open a GitHub issue.
+For help and questions about using this project, please use the GitHub Discussions link in the page header.
 
 ## Contributing
 
